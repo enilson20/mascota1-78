@@ -8,7 +8,7 @@ if($_POST["inicio"]){
 	
 	
 	/// consultamos el usuario segun el usuario y la clave
-	$con="select * from usuario where identificacion = '$usuario' and password = '$clave'"; 	
+	$con="select * from usuario where identificacion = '$usuario' and password = '$clave' and id_estado = 1"; 	
 	$query=mysqli_query($mysqli, $con);
 	$fila=mysqli_fetch_assoc($query);
 	
@@ -23,7 +23,7 @@ if($_POST["inicio"]){
 				/// dependiendo del tipo de usuario lo redireccinamos a una pagina
 		/// si es un client
 		if($_SESSION['tipo'] == 1){
-			header("Location: ../model/admin/index1.php"); 
+			header("Location: ../model/admin/index.php"); 
 			exit();
 		}
 		/// si es un vendedor
