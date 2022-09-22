@@ -50,7 +50,7 @@ if(isset($_POST['btncerrar']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>taller</title>
+    <title>Mascota Feliz</title>
 </head>
     <body>
         <section class="title">
@@ -63,7 +63,7 @@ if(isset($_POST['btncerrar']))
     
                 <li class="first-item">
                     <a href="agregar_usuario.php">
-                        <img src="img/analisis.png" alt="" class="imagen">
+                        <img src="img/tpusuarios.webp" alt="" class="imagen">
                         <span class="text-item">CREAR TIPO DE USUARIO</span>
                         <span class="down-item"></span>
                     </a>
@@ -71,7 +71,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="usuario.php">
-                        <img src="img/ejecucion.png" alt="" class="imagen">
+                        <img src="img/frmusuario.jpg" alt="" class="imagen">
                         <span class="text-item">FORMULARIO CREACION USUARIOS</span>
                         <span class="down-item"></span>
                     </a>
@@ -79,7 +79,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="tipo_mascota.php">
-                        <img src="img/implementar.jpg" alt="" class="imagen">
+                        <img src="img/tpmascota.jpg" alt="" class="imagen">
                         <span class="text-item">TIPO_MASCOTA</span>
                         <span class="down-item"></span>
                     </a>
@@ -95,7 +95,7 @@ if(isset($_POST['btncerrar']))
     
                 <li>
                     <a href="receta.php">
-                        <img src="" alt="" class="imagen">
+                        <img src="img/recetario.jpg" alt="" class="imagen">
                         <span class="text-item">RECETARIO</span>
                         <span class="down-item"></span>
                     </a>
