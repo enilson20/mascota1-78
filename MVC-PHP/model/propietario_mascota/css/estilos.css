@@ -10,12 +10,13 @@ body {
 }
 
 header {
-    position: fixed;
+    position: fixed; 
     width: 100%;
     top: 0;
     left: 0;
     padding: 20px;
-    background: #414ec0;
+    background: #312a88;
+    
 }
 
 header #button-menu {
@@ -30,7 +31,7 @@ header #button-menu {
     left: 0;
     width: 0%;
     height: 100vh;
-    background: rgba(0, 0, 0, .0);
+    background: rgba(30, 8, 112, 0);
 }
 
 .usuario {
@@ -52,7 +53,7 @@ header #button-menu {
 
 .navegacion .menu li.title-menu {
     padding: 20px;
-    background: #5F6F81;
+    background: #312a88;
     color: #fff;
     text-align: center;
     font-size: 22px;

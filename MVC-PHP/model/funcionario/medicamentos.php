@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once("../../db/connection.php");
@@ -11,31 +10,29 @@ $usua = mysqli_fetch_assoc($usuarios);
 ?>
 <?php
     if((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]== "frmadd")){
-        $tpest=$_POST["tip_est"];
-        $sqladd ="SELECT * FROM tipo_usuario WHERE tipo_usuario ='$tpest'";
+        $tm=$_POST["tip_med"];
+        
+        $sqladd ="SELECT * FROM medicamentos WHERE medicamentos ='$tm'";
         $query = mysqli_query($mysqli,$sqladd);
-        $fila = mysqli_fetch_assoc($query);
+        $fila = mysqli_fetch_assoc($query); 
 
         if($fila){
-            echo'<script>alert("el estado ya existe");</script>';
+            echo'<script>alert("el medicamnento ya existe");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';
         
-        }elseif ($_POST['tip_est']=='')
+        }elseif ($_POST['tip_med']=='')
         {
             echo'<script>alert("existen campos vacios en el formulario");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';
         }else{
-            $TP=$_POST["tip_est"];
-            $sqladd ="INSERT INTO estado(tipo_estado)values('$tpest')";
+            $TP=$_POST["tip_med"];
+            $sqladd ="INSERT INTO medicamentos(medicamentos)values('$tm')";
             $query = mysqli_query($mysqli,$sqladd);
 
             echo'<script>alert("registro exitoso");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';     
         }
 }
-
-
-
 
 ?>
 <form method="POST">
@@ -48,7 +45,7 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
+        <input type="submit" formaction="index1.php" value="Regresar" />
     </tr>
 </form>
 
@@ -68,7 +65,6 @@ if(isset($_POST['btncerrar']))
 
 </div>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,30 +74,22 @@ if(isset($_POST['btncerrar']))
     <link rel="stylesheet" href="estilos.css">
     <title>Mascota Feliz</title>
 </head>
-    <body onload = "frmadd.tip_est.focus()">
+    <body onload = "frmadd.tip_med.focus()">
         <section class="title">
-            <h1>Formulario Creacion Tipos de Mascota   <?php echo $usua['tipo_usuario']?></h1>
+            <h1>Formulario Ingreso de Medicamentos   <?php echo $usua['tipo_usuario']?></h1>
         </section>
         
         <table class ="centrar" border = "1">
             <form method= "POST" name="frmadd" autocplete = "off">
 
                 <tr>
-                    <td colspan="2"> RECETARIO </td>
+                    <td colspan="2"> Tipos de Medicamentos </td>
                 </tr>
 
                 <tr>
-                    <td>VISITA</td>
-                    <td><input type= "text" name="vis"> </td>
-                </tr>
-
-                <tr>
-                    <td>MEDICAMENTOS</td>
-                    <td><input type= "text" name="med"placeholder="ingrese medicamento" style="text-transform:uppercase"> </td>
-                </tr>
-                <td>MEDICAMENTOS</td>
-                    <td><input type= "text" name="med"placeholder="ingrese medicamento" style="text-transform:uppercase"> </td>
-
+                    <td>Medicamento</td>
+                    <td><input type= "text" name="tip_med"placeholder="ingrese el Medicamento" style="text-transform:uppercase"></td>
+                </t
                 <tr>
                     <td colspan="2"> &nbsp; </td>
                 </tr>
@@ -113,7 +101,6 @@ if(isset($_POST['btncerrar']))
                 </tr>
 
             </form>
-
 
         </table>
     

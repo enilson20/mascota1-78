@@ -49,12 +49,13 @@ if(isset($_POST['btncerrar']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/logogato3.jpg" type="image/jpg">
     <link rel="stylesheet" href="estilos.css">
     <title>Mascota Feliz</title>
 </head>
     <body>
         <section class="title">
-            <h1>INTERFAZ    <?php echo $usua['tipo_usuario']?></h1>
+            <h1>  <?php echo $usua['tipo_usuario']?></h1>
         </section>
     
         <nav class="navegacion">
@@ -63,7 +64,7 @@ if(isset($_POST['btncerrar']))
     
                 <li class="first-item">
                     <a href="agregar_usuario.php">
-                        <img src="img/tpusuarios.webp" alt="" class="imagen">
+                        <img src="img/usuario.jpg" alt="" class="imagen">
                         <span class="text-item">CREAR TIPO DE USUARIO</span>
                         <span class="down-item"></span>
                     </a>
@@ -72,7 +73,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="usuario.php">
                         <img src="img/frmusuario.jpg" alt="" class="imagen">
-                        <span class="text-item">FORMULARIO CREACION USUARIOS</span>
+                        <span class="text-item">CREACION USUARIOS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -80,7 +81,7 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="tipo_mascota.php">
                         <img src="img/tpmascota.jpg" alt="" class="imagen">
-                        <span class="text-item">TIPO_MASCOTA</span>
+                        <span class="text-item">CREAR TIPO MASCOTA</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
@@ -88,67 +89,20 @@ if(isset($_POST['btncerrar']))
                 <li>
                     <a href="tipos_estados.php">
                         <img src="img/planear.png" alt="" class="imagen">
-                        <span class="text-item">TIPOS DE ESTADOS</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="receta.php">
-                        <img src="img/recetario.jpg" alt="" class="imagen">
-                        <span class="text-item">RECETARIO</span>
+                        <span class="text-item">CREAR TIPOS DE ESTADOS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
                 <li class="first-item">
-                    <a href="#">
+                    <a href="lista_usuarios.php">
                         <img src="img/analisis.png" alt="" class="imagen">
-                        <span class="text-item">OPCION 6</span>
+                        <span class="text-item">LISTA DE USUARIOS</span>
                         <span class="down-item"></span>
                     </a>
                 </li>
     
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 7</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 8</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 9</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-    
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 10</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="" alt="" class="imagen">
-                        <span class="text-item">OPCION 11</span>
-                        <span class="down-item"></span>
-                    </a>
-                </li>
-                
+                            
             </ul>
             
         </nav>

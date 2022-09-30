@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Open sans';
-    background: #E8E8E8;
+    background: #e8e8e8;
 }
 
 header {
@@ -30,7 +30,7 @@ header #button-menu {
     left: 0;
     width: 0%;
     height: 100vh;
-    background: rgba(0, 0, 0, .0);
+    background: hsla(246, 95%, 61%, 0);
 }
 
 .usuario {

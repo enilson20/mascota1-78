@@ -14,7 +14,7 @@
 	<title>Menu Administrador</title>
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
-
+	<link rel="shortcut icon" href="../../../img/logogato3.jpg" type="image/jpg">
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js"></script>
 </head>

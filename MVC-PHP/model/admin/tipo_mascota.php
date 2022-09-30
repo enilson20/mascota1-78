@@ -12,12 +12,12 @@ $usua = mysqli_fetch_assoc($usuarios);
 <?php
     if((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]== "frmadd")){
         $tm=$_POST["tip_mas"];
-        $sqladd ="SELECT * FROM tipo_usuario WHERE tipo_usuario ='$tm'";
+        $sqladd ="SELECT * FROM tipo_mascota WHERE tipo_mascota ='$tm'";
         $query = mysqli_query($mysqli,$sqladd);
         $fila = mysqli_fetch_assoc($query);
 
         if($fila){
-            echo'<script>alert("el usuario ya existe");</script>';
+            echo'<script>alert("el tipo de mascota ya existe");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';
         
         }elseif ($_POST['tip_mas']=='')
@@ -48,7 +48,7 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
+        <input type="submit" formaction="index.php" value="Regresar" />
     </tr>
 </form>
 

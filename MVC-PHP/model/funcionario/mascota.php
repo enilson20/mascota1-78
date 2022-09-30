@@ -10,46 +10,42 @@ $usua = mysqli_fetch_assoc($usuarios);
 
 <?php
 //consulta para los tipos de usuarios
-$sql1 ="SELECT * FROM tipo_usuario";
+$sql1 ="SELECT * FROM usuario WHERE id_tipo_usuario = 5  " ;
 $tp_usu = mysqli_query($mysqli, $sql1);
 $usua1 = mysqli_fetch_assoc($tp_usu);
 
-$sql2 ="SELECT * FROM estado WHERE id_estado < 3 ";
+$sql2 ="SELECT * FROM tipo_mascota "; 
 $tp_usu2 = mysqli_query($mysqli, $sql2);
 $usua2 = mysqli_fetch_assoc($tp_usu2);
 ?>
 
 <?php
     if((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]== "frmadd")){
-        $TP=$_POST["docu"];
-        $sqladd ="SELECT * FROM usuario WHERE identificacion ='$TP'";
+        $TP1 =$_POST["nom"];
+        $sqladd ="SELECT * FROM mascota WHERE nombre ='$TP1'";
         $query = mysqli_query($mysqli,$sqladd);
         $fila = mysqli_fetch_assoc($query);
 
         if($fila){
-            echo'<script>alert("el usuario ya existe");</script>';
+            echo'<script>alert("la mascota ya existe");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';
         
-        }elseif ($_POST['id_tp']=='' || $_POST['id_estado']==''|| $_POST['pass']=='' || $_POST['docu']==''|| $_POST['nom']=='' || $_POST['ape']=='' || $_POST['tel']=='' || $_POST['cor']=='' || $_POST['dir']=='' || $_POST['tar']=='')
+        }elseif ($_POST['id_us']=='' || $_POST['id_tm']==''|| $_POST['nom']=='' || $_POST['raz']==''|| $_POST['col']=='' )
         {
             echo'<script>alert("existen campos vacios en el formulario");</script>';
             echo'<script>window.lacation="agregar_usuario.php"</script>';
         }else{
-            $id_tp =$_POST["id_tp"];
-            $id_estado =$_POST["id_estado"];
-            $pass =$_POST["pass"];
-            $docu =$_POST["docu"];
+            $id_us =$_POST["id_us"];
+            $id_tm =$_POST["id_tm"];
             $nom =$_POST["nom"];
-            $ape =$_POST["ape"];
-            $tel =$_POST["tel"];
-            $cor =$_POST["cor"];
-            $dir =$_POST["dir"];
-            $tar =$_POST["tar"];
-            $sqladd ="INSERT INTO usuario (id_tipo_usuario, id_estado, password, identificacion, nombre, apellido, telefono, correo, dirrecion, tarjeta_profesional) values('$id_tp', '$id_estado', '$pass', '$docu', '$nom', '$ape', '$tel', '$cor','$dir', '$tar')";
+            $raz =$_POST["raz"];
+            $col =$_POST["col"];
+
+            $sqladd ="INSERT INTO mascota (id_usuario, id_tipo_mascota, nombre, raza, color) values('$id_us', '$id_tm', '$nom', '$raz', '$col')";
             $query = mysqli_query($mysqli,$sqladd);
 
             echo'<script>alert("registro exitoso");</script>';
-            echo'<script>window.lacation="agregar_usuario.php"</script>';     
+            echo'<script>window.lacation="mascota.php"</script>';     
         }
 }
 
@@ -61,10 +57,9 @@ $usua2 = mysqli_fetch_assoc($tp_usu2);
     </tr>
 <tr><br>
     <td colspan='2' align="center">
-    
-    
+        
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="index.php" value="Regresar" />
+        <input type="submit" formaction="index1.php" value="Regresar" />
     </tr>
 </form>
 
@@ -84,7 +79,6 @@ if(isset($_POST['btncerrar']))
 
 </div>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,26 +86,16 @@ if(isset($_POST['btncerrar']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="../../../img/logogato.png" type="image/x-icon">
     <title>Mascota Feliz</title>
 </head>
     <body onload = "frmadd.tip_usu.focus()">
         <section class="title">
-            <h1>Formulario Creacion Usuarios   <?php echo $usua['tipo_usuario']?></h1>
+            <h1>Formulario Creacion Mascotas - <?php echo $usua['tipo_usuario']?></h1>
         </section>
         
         <table class ="centrar" border = "1">
             <form method= "POST" name="frmadd" autocplete = "off">
-
-                
-                <tr>
-                    <td>Contraseña</td>
-                    <td><input type= "password" name="pass" placeholder = "ingrese contraseña"> </td>
-                </tr>
-
-                <tr>
-                    <td>Documento Identidad</td>
-                    <td><input type= "text" name="docu" placeholder = "ingrese numero documento"> </td>
-                </tr>
 
                 <tr>
                     <td>Nombre</td>
@@ -119,42 +103,28 @@ if(isset($_POST['btncerrar']))
                 </tr>
 
                 <tr>
-                    <td>Apellidos</td>
-                    <td><input type= "text" name="ape" placeholder = "ingrese sus apellidos" style="text-transform:uppercase"> </td>
+                    <td>Raza</td>
+                    <td><input type= "text" name="raz" placeholder = "ingrese la raza" style="text-transform:uppercase"> </td>
                 </tr>
 
                 <tr>
-                    <td>Telefono</td>
-                    <td><input type= "number" name="tel" placeholder = "ingrese numero de telefono"> </td>
-                </tr>
-
-                <tr>
-                    <td>Correo Electronico</td>
-                    <td><input type= "email" name="cor" placeholder = "ingrese correo electronico"> </td>
-                </tr>
-
-                <tr>
-                    <td>Direccion de Domicilio</td>
-                    <td><input type= "text" name="dir" placeholder = "ingrese Direccion Domicilio" style="text-transform:uppercase"> </td>
-                </tr>
-
-                <tr>
-                    <td>Targeta Profesional</td>
-                    <td><input type= "text" name="tar" placeholder = "ingrese targeta profesional" value="0"> </td>
+                    <td>Color</td>
+                    <td><input type= "text" name="col" placeholder = "ingrese color" style="text-transform:uppercase"> </td>
                 </tr>
 
                 <tr>
                 <tr>
-                    <td colspan="2"> tipos de usuarios </td>
+                    <td colspan="2"> usuarios </td>
                 </tr>
 
-                <td>Tipo Usuario</td>
+                <tr>
+                <td>Usuario</td>
                     <td>
-                        <select name="id_tp">
-                            <option value=""> seleccione una opcion</option>
+                        <select name="id_us">
+                            <option value=""> seleccione usuario</option>
                             <?php
                             do{                             
-                            ?> <option value="<?php echo($usua1['id_tipo_usuario'])?>"><?php echo($usua1['tipo_usuario'])?></option>
+                            ?> <option value="<?php echo($usua1['identificacion'])?>"><?php echo($usua1['nombre'])?></option>
                             <?php
                             }while($usua1=mysqli_fetch_assoc($tp_usu));
                             ?>
@@ -164,13 +134,13 @@ if(isset($_POST['btncerrar']))
                 </tr>
 
                 <tr>
-                    <td>estado</td>
+                    <td>Tipo de Mascota</td>
                     <td>
-                        <select name="id_estado">
+                        <select name="id_tm">
                             <option value=""> seleccione un estado</option>
                             <?php
                             do{                             
-                            ?> <option value="<?php echo($usua2['id_estado'])?>"><?php echo($usua2['tipo_estado'])?></option>
+                            ?> <option value="<?php echo($usua2['id_tipo_mascota'])?>"><?php echo($usua2['tipo_mascota'])?></option>
                             <?php
                             }while($usua2=mysqli_fetch_assoc($tp_usu2));
                             ?>
@@ -178,9 +148,6 @@ if(isset($_POST['btncerrar']))
                     </td>
                     
                 </tr>
-
-                    
-
 
                 <tr>
                     <td colspan="2"> &nbsp; </td>
@@ -193,7 +160,6 @@ if(isset($_POST['btncerrar']))
                 </tr>
 
             </form>
-
 
         </table>
     

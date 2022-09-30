@@ -11,10 +11,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Menu Administrador</title>
-	<link rel="stylesheet" href="css/estilos.css">
+	<title>Menu Veterinario</title>
+	<link rel="stylesheet" href="css/estilos.css"> 
 	<link rel="stylesheet" href="css/font-awesome.css">
-
+	<link rel="shortcut icon" href="../../../img/logogato3.jpg" type="image/jpg">
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js"></script>
 </head>
@@ -30,37 +30,18 @@
 		<nav class="navegacion">
 			<ul class="menu" >
 				<!-- TITULAR -->
-				<li class="title-menu">Todas las categorias</li>
+				<li class="title-menu">Menu Veterinario</li>
 				<!-- TITULAR -->
 
-				<li><a href="#"><span class="fa fa-home icon-menu"></span>Inicio</a></li>
+				<li><a href="mascota.php"><span class="fa fa-home icon-menu"></span>Mascota</a></li>
+
+				<li><a href="visita.php"><span class="fa fa-home icon-menu"></span>Visita</a></li>
 
 				<li class="item-submenu" menu="1">
-					<a href="#"><span class="fa fa-suitcase icon-menu"></span>Servicios</a>
-					<ul class="submenu">
-						<li class="title-menu"><span class="fa fa-suitcase icon-menu"></span>Servicios</li>
-						<li class="go-back">Atras</li>
-
-						<li><a href="#">Diseño web</a></li>
-						<li><a href="#">Alojamiento web</a></li>
-						<li><a href="#">Dominios</a></li>
-					</ul>
-				</li>
-
-				<li class="item-submenu" menu="2">
-					<a href="#"><span class="fa fa-shopping-bag icon-menu"></span>Tienda</a>
-					<ul class="submenu">
-						<li class="title-menu"><span class="fa fa-shopping-bag icon-menu"></span>Tienda</li>
-						<li class="go-back">Atras</li>
-
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smarphones</a></li>
-						<li><a href="#">Consolas de viejuegos</a></li>
-					</ul>
-				</li>
-
-				<li><a href="#"><span class="fa fa-envelope icon-menu"></span>Contacto</a></li>
-				<li><a href="#"><span class="fa fa-tag icon-menu"></span>Blog</a></li>
+					<a href="medicamentos.php"><span class="fa fa-suitcase icon-menu"></span>Medicamentos</a>
+				<li class="item-submenu" menu="1">
+					<a href="receta.php"><span class="fa fa-suitcase icon-menu"></span>Receta</a>
+					
 			</ul>
 		</nav>
 	</header>
