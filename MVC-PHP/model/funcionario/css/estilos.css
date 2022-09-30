@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Open sans';
-    background: #E8E8E8;
+    background: #e9e1e9;
 }
 
 header {
@@ -14,13 +14,13 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 20px;
-    background: #414ec0;
+    padding: 20px; 
+    background: #ebc035;
 }
 
 header #button-menu {
     font-size: 30px;
-    color: #fff;
+    color: rgb(248, 250, 249);
     cursor: pointer;
 }
 
@@ -34,8 +34,8 @@ header #button-menu {
 }
 
 .usuario {
-    font-size: 18px;
-    color: rgb(247, 243, 243);
+    font-size: 20px;
+    color: rgb(248, 244, 244);
     float: right;
 }
 
@@ -52,8 +52,8 @@ header #button-menu {
 
 .navegacion .menu li.title-menu {
     padding: 20px;
-    background: #5F6F81;
-    color: #fff;
+    background: #ebc035;
+    color: rgb(15, 12, 14);
     text-align: center;
     font-size: 22px;
 }
@@ -65,11 +65,11 @@ header #button-menu {
     font-size: 22px;
     font-weight: 200;
     text-decoration: none;
-    color: #575D69;
+    color: #020202;
 }
 
 .navegacion .menu a:hover {
-    background: #798DA3;
+    background: #ebc035;
     color: #fff;
 }
 
@@ -92,13 +92,13 @@ header #button-menu {
 /* Submenu ============*/
 
 .navegacion .submenu li.title-menu {
-    background: #fff;
+    background: rgb(255, 255, 255);
     color: #042568;
 }
 
 .navegacion .submenu li.go-back {
     padding: 10px 20px;
-    background: #5F6F81;
+    background: hsl(300, 20%, 1%);
     color: #fff;
     font-size: 18px;
     cursor: pointer;

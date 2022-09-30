@@ -12,7 +12,7 @@ $usua = mysqli_fetch_assoc($usuarios);
 <?php
     if((isset($_POST["btnguardar"]))&&($_POST["btnguardar"]== "frmadd")){
         $tpest=$_POST["tip_est"];
-        $sqladd ="SELECT * FROM tipo_usuario WHERE tipo_usuario ='$tpest'";
+        $sqladd ="SELECT * FROM estado WHERE tipo_estado ='$tpest'";
         $query = mysqli_query($mysqli,$sqladd);
         $fila = mysqli_fetch_assoc($query);
 
@@ -48,7 +48,7 @@ $usua = mysqli_fetch_assoc($usuarios);
     
     
         <input type="submit" value="Cerrar sesión" name="btncerrar" /></td>
-        <input type="submit" formaction="../index.php" value="Regresar" />
+        <input type="submit" formaction="index.php" value="Regresar" />
     </tr>
 </form>
 
@@ -80,7 +80,7 @@ if(isset($_POST['btncerrar']))
 </head>
     <body onload = "frmadd.tip_est.focus()">
         <section class="title">
-            <h1>Formulario Creacion Tipos de Mascota   <?php echo $usua['tipo_usuario']?></h1>
+            <h1>Formulario Creacion Tipos de Estado   <?php echo $usua['tipo_usuario']?></h1>
         </section>
         
         <table class ="centrar" border = "1">
